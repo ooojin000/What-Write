@@ -40,7 +40,7 @@
     overflow-y: scroll;
 }
 .content-box {
-    width: 900px;
+    width: 1000px;
     height: 300px;
 }
 .main-post-title {
@@ -84,4 +84,26 @@
 }
 .form-button button{
     margin-left: 1%;
+}
+
+/* 글 상세보기 페이지 */
+.post-category{
+    width: 40%; 
+    justify-items: stretch;
+}
+.post-info{
+    display: flex; 
+    justify-content: flex-start;
+}
+.post-info-detail{
+    width: 40%; 
+    margin-right: auto; 
+    text-align: end;
+}
+.post-content-box{
+    height: 300%; 
+    border: 1px black solid;
+}
+.title-read{
+    margin: 2%;
 }
