@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글작성페이지</title>
+    <link
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+</head>
+<body>
+    <div class="row">
+        <div class="sidebar">
+            <div class="intro">
+                <h3 class="main-post-header">
+                    <Strong>What Write</strong>
+                </h3>
+                <span>우지진/</span>
+                <span>좋아하는 것들 기록합니다. 이웃추가 환영힙니다.</span> 
+            </div>
+            <!-- intro -->
+            <div class="profile-photo"></div>
+            
+            
+            <div class="menubar">
+                <a class="menubar-title" href="##" style="color: white"
+                    >Click ME !! 👆</a>
+            </div>
+            <!-- menubar -->
+        </div>
+        <div class="content">
+            <div class="content-box">
+
+                <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^-->         
+                <h3 class="main-post-header">
+                    <Strong>What would you want to Write</strong>
+                </h3>
+                <form action="" method="" style=" margin-top: 5%;">
+                    <div class="form-group">
+                        <label for="title">제목</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="제목을 입력해주세요" style="width:1000px">  
+                    </div>
+                    <div class="form-group">
+                        <label for="category">카테고리</label>
+                        <select class="form-control" name="category" style="width:1000px">
+                            <option>Default select</option>
+                        </select>
+                    </div>
+                    <div id="toastui-editor" class="toastui-editor">
+
+                    </div>
+                    <div class="form-button">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="button" class="btn btn-dark">go back</button>
+                    </div>
+                </form>
+                <!--^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^--> 
+            </div>    
+        </div>
+    </div>  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+    <script>
+        const editor = new toastui.Editor({
+            el: document.querySelector('#toastui-editor'), // 에디터를 적용할 요소 (컨테이너)
+            height: '500px',                        // 에디터 영역의 높이 값 (OOOpx || auto)
+            initialEditType: 'WYSIWYG',            // 최초로 보여줄 에디터 타입 (markdown || wysiwyg)
+            initialValue: '내용을 입력해 주세요.',     // 내용의 초기 값으로, 반드시 마크다운 문자열 형태여야 함
+            previewStyle: 'vertical',                // 마크다운 프리뷰 스타일 (tab || vertical)
+            /* start of hooks */
+            hooks: {
+                addImageBlobHook(blob, callback) {  // 이미지 업로드 로직 커스텀
+                    console.log(blob);
+                    console.log(callback);
+                }
+            }
+            /* end of hooks */
+        });
+    </script>
+</body>
+</html>
